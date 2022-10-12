@@ -2,6 +2,6 @@
 <project version="4">
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="ProjectRootManager" version="2" languageLevel="JDK_17" project-jdk-name="corretto-16" project-jdk-type="JavaSDK">
-    <output url="file://$PROJECT_DIR$/out" />
+    <output url="file://$USER_HOME$/Studies/sem 3/PO/oolab/out" />
   </component>
 </project>
