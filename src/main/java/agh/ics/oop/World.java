@@ -9,14 +9,15 @@ public class World {
     public static void main(String[] args) {
         System.out.println("system wystartował");
         List<Direction> directions = convert(args);
-        run(directions);
+        run(directions.toArray(new Direction[0]));
+//        runList(directions);
         System.out.println("system zakończył działanie");
     }
 
-    static List<Direction> convert(String[] args){
+    static List<Direction> convert(String[] args) {
         return Arrays.stream(args)
                 .filter(Arrays.asList("f", "b", "r", "l")::contains)
-                .map(arg -> switch(arg){
+                .map(arg -> switch (arg) {
                     case "f" -> Direction.FORWARD;
                     case "b" -> Direction.BACKWARD;
                     case "r" -> Direction.RIGHT;
@@ -26,20 +27,36 @@ public class World {
                 .collect(Collectors.toList());
     }
 
-    static void run(List<Direction> directions){
+    static void run(Direction[] directions) {
         System.out.println("Start");
-        System.out.println(directions.stream()
-                .map(dir -> switch(dir){
+        System.out.println(Arrays.stream(directions)
+                .map(dir -> switch (dir) {
                     case FORWARD -> "Zwierzak idzie do przodu";
                     case BACKWARD -> "Zwierzak idzie do tyłu";
                     case RIGHT -> "Zwierzak skręca w prawo";
                     case LEFT -> "Zwierzak skręca w lewo";
                 })
                 .collect(Collectors.joining("\n")));
+        System.out.println(Arrays.stream(directions).map(Enum::name).collect(Collectors.joining(", ")));
         System.out.println("Stop");
+    }
+
+    static void runList(List<Direction> directions) {
+        System.out.println("Start List");
+        System.out.println(directions.stream()
+                .map(dir -> switch (dir) {
+                    case FORWARD -> "Zwierzak idzie do przodu";
+                    case BACKWARD -> "Zwierzak idzie do tyłu";
+                    case RIGHT -> "Zwierzak skręca w prawo";
+                    case LEFT -> "Zwierzak skręca w lewo";
+                })
+                .collect(Collectors.joining("\n")));
+        System.out.println("Stop List");
         System.out.println(directions.stream().map(Enum::name).collect(Collectors.joining(", ")));
     }
 }
+
+
 
 
 // Standard version
