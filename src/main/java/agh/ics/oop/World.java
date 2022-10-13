@@ -10,7 +10,6 @@ public class World {
         System.out.println("system wystartował");
         List<Direction> directions = convert(args);
         run(directions.toArray(new Direction[0]));
-//        runList(directions);
         System.out.println("system zakończył działanie");
     }
 
@@ -40,22 +39,21 @@ public class World {
         System.out.println(Arrays.stream(directions).map(Enum::name).collect(Collectors.joining(", ")));
         System.out.println("Stop");
     }
-
-    static void runList(List<Direction> directions) {
-        System.out.println("Start List");
-        System.out.println(directions.stream()
-                .map(dir -> switch (dir) {
-                    case FORWARD -> "Zwierzak idzie do przodu";
-                    case BACKWARD -> "Zwierzak idzie do tyłu";
-                    case RIGHT -> "Zwierzak skręca w prawo";
-                    case LEFT -> "Zwierzak skręca w lewo";
-                })
-                .collect(Collectors.joining("\n")));
-        System.out.println("Stop List");
-        System.out.println(directions.stream().map(Enum::name).collect(Collectors.joining(", ")));
-    }
+//    static void runList(List<Direction> directions) {
+//        System.out.println("Start List");
+//        System.out.println(directions.stream()
+//                .map(dir -> switch (dir) {
+//                    case FORWARD -> "Zwierzak idzie do przodu";
+//                    case BACKWARD -> "Zwierzak idzie do tyłu";
+//                    case RIGHT -> "Zwierzak skręca w prawo";
+//                    case LEFT -> "Zwierzak skręca w lewo";
+//                })
+//                .collect(Collectors.joining("\n")));
+//        System.out.println("Stop List");
+//        System.out.println(directions.stream().map(Enum::name).collect(Collectors.joining(", ")));
+//    }
+//}
 }
-
 
 
 
@@ -101,5 +99,5 @@ public class World {
 //        for(Direction dir: Arrays.copyOfRange(dir_arr, 0, dir_arr.length-1))
 //            System.out.print(dir + ", ");
 //        System.out.println(dir_arr[dir_arr.length-1]);
-//    }
+////    }
 //}
