@@ -1,3 +1,4 @@
 # oolab
 Projektowanie obiektowe
-# lab 1
+# Zaimplementowane labolatoria
+- Lab 1
