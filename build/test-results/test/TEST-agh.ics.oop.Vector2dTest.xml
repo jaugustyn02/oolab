@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="agh.ics.oop.Vector2dTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-10-15T17:27:54" hostname="LAPTOP-ST6HPR0U" time="0.032">
+  <properties/>
+  <testcase name="testEquals()" classname="agh.ics.oop.Vector2dTest" time="0.032"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
