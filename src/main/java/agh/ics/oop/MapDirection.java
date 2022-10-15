@@ -22,7 +22,7 @@ public enum MapDirection {
     }
 
     public MapDirection previous(){
-        return values[(this.ordinal()-1) % values.length];
+        return values[(this.ordinal()+values.length-1) % values.length];
     }
 
     public Vector2d toUnitVector(){
