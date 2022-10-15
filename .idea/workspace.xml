@@ -4,19 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f966ae75-efa7-41c6-ae26-6d89d1ccd496" name="Changes" comment="run_fix">
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Changes.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Changes/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$USER_HOME$/Studies/sem 3/PO/oolab/.gradle/7.4/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$USER_HOME$/Studies/sem 3/PO/oolab/.gradle/7.4/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$USER_HOME$/Studies/sem 3/PO/oolab/.gradle/7.4/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$USER_HOME$/Studies/sem 3/PO/oolab/.gradle/7.4/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$USER_HOME$/Studies/sem 3/PO/oolab/.gradle/7.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$USER_HOME$/Studies/sem 3/PO/oolab/.gradle/7.4/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$USER_HOME$/Studies/sem 3/PO/oolab/.gradle/7.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$USER_HOME$/Studies/sem 3/PO/oolab/.gradle/7.4/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$USER_HOME$/Studies/sem 3/PO/oolab/.gradle/7.4/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$USER_HOME$/Studies/sem 3/PO/oolab/.gradle/7.4/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$USER_HOME$/Studies/sem 3/PO/oolab/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$USER_HOME$/Studies/sem 3/PO/oolab/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$USER_HOME$/Studies/sem 3/PO/oolab/build/classes/java/main/agh/ics/oop/World$1.class" beforeDir="false" afterPath="$USER_HOME$/Studies/sem 3/PO/oolab/build/classes/java/main/agh/ics/oop/World$1.class" afterDir="false" />
-      <change beforePath="$USER_HOME$/Studies/sem 3/PO/oolab/build/classes/java/main/agh/ics/oop/World.class" beforeDir="false" afterPath="$USER_HOME$/Studies/sem 3/PO/oolab/build/classes/java/main/agh/ics/oop/World.class" afterDir="false" />
-      <change beforePath="$USER_HOME$/Studies/sem 3/PO/oolab/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$USER_HOME$/Studies/sem 3/PO/oolab/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+    <list default="true" id="f966ae75-efa7-41c6-ae26-6d89d1ccd496" name="Changes" comment="lab2_init">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/agh/ics/oop/MapDirection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/agh/ics/oop/MoveDirection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/agh/ics/oop/Vector2d.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/agh/ics/oop/MapDirectionTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.4/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/agh/ics/oop/World$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/agh/ics/oop/World$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/agh/ics/oop/World.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/agh/ics/oop/World.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/agh/ics/oop/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/agh/ics/oop/World.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,31 +48,34 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$USER_HOME$/Studies/sem 3/PO/oolab" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2FlCt1PgJjuS0nOr6oRZPvskJgz" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/jaugustyn/Studies/sem 3/PO/oolab&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "jdk.selected.JAVA_MODULE": "corretto-16",
+    "last_opened_file_path": "/home/jaugustyn/Studies/sem 3/PO/oolab",
+    "settings.editor.selected.configurable": "editor.preferences.fonts.default"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$USER_HOME$/Studies/sem 3/PO" />
-      <recent name="$USER_HOME$/Studies/sem\ 3/PO/" />
+      <recent name="$PROJECT_DIR$/.." />
+      <recent name="$PROJECT_DIR$/../../../sem\ 3/PO/" />
     </key>
   </component>
   <component name="RunManager">
@@ -154,7 +163,8 @@
     <MESSAGE value="no_warning" />
     <MESSAGE value="baza" />
     <MESSAGE value="run_fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="run_fix" />
+    <MESSAGE value="lab2_init" />
+    <option name="LAST_COMMIT_MESSAGE" value="lab2_init" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

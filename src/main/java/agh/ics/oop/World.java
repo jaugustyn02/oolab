@@ -4,13 +4,23 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-// Advanced version
+
 public class World {
     public static void main(String[] args) {
-        System.out.println("system wystartował");
-        List<Direction> directions = convert(args);
-        run(directions.toArray(new Direction[0]));
-        System.out.println("system zakończył działanie");
+//        lab2
+        Vector2d position1 = new Vector2d(1,2);
+        System.out.println(position1);
+        Vector2d position2 = new Vector2d(-2,1);
+        System.out.println(position2);
+        System.out.println(position1.add(position2));
+//        lab2 end
+
+//        lab1
+//        System.out.println("system wystartował");
+//        List<Direction> directions = convert(args);
+//        run(directions.toArray(new Direction[0]));
+//        System.out.println("system zakończył działanie");
+//        lab1 end
     }
 
     static List<Direction> convert(String[] args) {
@@ -39,65 +49,4 @@ public class World {
         System.out.println(Arrays.stream(directions).map(Enum::name).collect(Collectors.joining(", ")));
         System.out.println("Stop");
     }
-//    static void runList(List<Direction> directions) {
-//        System.out.println("Start List");
-//        System.out.println(directions.stream()
-//                .map(dir -> switch (dir) {
-//                    case FORWARD -> "Zwierzak idzie do przodu";
-//                    case BACKWARD -> "Zwierzak idzie do tyłu";
-//                    case RIGHT -> "Zwierzak skręca w prawo";
-//                    case LEFT -> "Zwierzak skręca w lewo";
-//                })
-//                .collect(Collectors.joining("\n")));
-//        System.out.println("Stop List");
-//        System.out.println(directions.stream().map(Enum::name).collect(Collectors.joining(", ")));
-//    }
-//}
 }
-
-
-
-// Standard version
-//public class World {
-//    public static void main(String[] args) {
-//        System.out.println("system wystartował");
-//        Direction[] direction_arr = new Direction[args.length];
-//        int no_valid_args = convert(args, direction_arr);
-//        run(Arrays.copyOfRange(direction_arr, 0, no_valid_args));
-//        System.out.println("system zakończył działanie");
-//    }
-//    // static int function that assigns Direction values in passed empty array according to initial String arguments
-//    // and returns number of valid arguments
-//    static int convert(String[] args, Direction[] dir_arr){
-//        int i=0;
-//        for (String arg: args){
-//            dir_arr[i] = switch(arg){
-//                case "f" -> Direction.FORWARD;
-//                case "b" -> Direction.BACKWARD;
-//                case "r" -> Direction.RIGHT;
-//                case "l" -> Direction.LEFT;
-//                default -> null;
-//            };
-//            if (dir_arr[i] != null) i++;
-//        }
-//        return i;
-//    }
-//    // static void function that prints text according to Direction values in passed array and prints all elements of
-//    // this array with separator ','
-//    static void run(Direction[] dir_arr){
-//        System.out.println("Start");
-//        for (Direction direction: dir_arr) {
-//            System.out.print(switch (direction){
-//                case FORWARD -> "Zwierzak idzie do przodu\n";
-//                case BACKWARD -> "Zwierzak idzie do tyłu\n";
-//                case RIGHT -> "Zwierzak skręca w prawo\n";
-//                case LEFT -> "Zwierzak skręca w lewo\n";
-//            });
-//        }
-//        System.out.println("Stop");
-//
-//        for(Direction dir: Arrays.copyOfRange(dir_arr, 0, dir_arr.length-1))
-//            System.out.print(dir + ", ");
-//        System.out.println(dir_arr[dir_arr.length-1]);
-////    }
-//}
