@@ -13,11 +13,6 @@ public class MapDirectionTest {
                 case WEST -> MapDirection.NORTH;
             });
         }
-//        2nd option
-//        Assertions.assertEquals(MapDirection.NORTH.next(), MapDirection.EAST);
-//        Assertions.assertEquals(MapDirection.EAST.next(), MapDirection.SOUTH);
-//        Assertions.assertEquals(MapDirection.SOUTH.next(), MapDirection.WEST);
-//        Assertions.assertEquals(MapDirection.WEST.next(), MapDirection.NORTH);
     }
     @Test public void testPrevious() {
         for (MapDirection md : MapDirection.values()) {

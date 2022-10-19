@@ -40,13 +40,16 @@ public class Vector2dTest {
 
     @Test public void testAdd(){
         Assertions.assertEquals((new Vector2d(15, 15)), (new Vector2d(5, 10)).add(new Vector2d(10, 5)));
+        Assertions.assertEquals((new Vector2d(6, 9)), (new Vector2d(10, 10)).add(new Vector2d(-4, -1)));
     }
 
     @Test public void testSubtract(){
         Assertions.assertEquals((new Vector2d(-3, 2)), (new Vector2d(5, 10)).subtract(new Vector2d(8, 8)));
+        Assertions.assertEquals((new Vector2d(21, 22)), (new Vector2d(20, 20)).subtract(new Vector2d(-1, -2)));
     }
 
     @Test public void testOpposite(){
         Assertions.assertEquals((new Vector2d(4, -5)), (new Vector2d(-4, 5)).opposite());
+        Assertions.assertEquals((new Vector2d(-10, 6)), (new Vector2d(10, -6)).opposite());
     }
 }
