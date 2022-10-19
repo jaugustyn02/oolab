@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f966ae75-efa7-41c6-ae26-6d89d1ccd496" name="Changes" comment="lab2_vec_tests">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="f966ae75-efa7-41c6-ae26-6d89d1ccd496" name="Changes" comment="lab2_final" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,7 +30,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -61,7 +58,30 @@
       <recent name="$PROJECT_DIR$/../../../sem\ 3/PO/" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.Vector2dTest.testAdd">
+  <component name="RunManager" selected="Gradle.Vector2dTest">
+    <configuration name="MapDirectionTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;agh.ics.oop.MapDirectionTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
     <configuration name="Vector2dTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -99,29 +119,6 @@
             <option value=":test" />
             <option value="--tests" />
             <option value="&quot;agh.ics.oop.Vector2dTest.testAdd&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="Vector2dTest.testEquals" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;agh.ics.oop.Vector2dTest.testEquals&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -179,11 +176,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.Vector2dTest" />
+        <item itemvalue="Gradle.MapDirectionTest" />
         <item itemvalue="Gradle.Vector2dTest.testAdd" />
         <item itemvalue="Gradle.Vector2dTest.testSubtract" />
         <item itemvalue="Gradle.Vector2dTest.testOpposite" />
-        <item itemvalue="Gradle.Vector2dTest.testEquals" />
-        <item itemvalue="Gradle.Vector2dTest" />
       </list>
     </recent_temporary>
   </component>
@@ -252,7 +249,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665854895735</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="lab2_final">
+      <created>1666202472121</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1666202472121</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -275,7 +279,8 @@
     <MESSAGE value="lab2_init" />
     <MESSAGE value="lab2_mdt" />
     <MESSAGE value="lab2_vec_tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="lab2_vec_tests" />
+    <MESSAGE value="lab2_final" />
+    <option name="LAST_COMMIT_MESSAGE" value="lab2_final" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
