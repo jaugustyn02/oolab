@@ -1,5 +1,6 @@
 package agh.ics.oop;
 
+//import java.lang.reflect.AnnotatedArrayType;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -7,6 +8,15 @@ import java.util.stream.Collectors;
 
 public class World {
     public static void main(String[] args) {
+//        lab3
+        Animal newAnimal = new Animal();
+        System.out.println(Arrays.toString(OptionsParser.parse(args)));
+        for (MoveDirection move: OptionsParser.parse(args)){
+            newAnimal.move(move);
+        }
+        System.out.println(newAnimal);
+//        lab3 end
+
 //        lab2
         Vector2d position1 = new Vector2d(1,2);
         System.out.println(position1);
@@ -16,10 +26,10 @@ public class World {
 //        lab2 end
 
 //        lab1
-//        System.out.println("system wystartował");
-//        List<Direction> directions = convert(args);
-//        run(directions.toArray(new Direction[0]));
-//        System.out.println("system zakończył działanie");
+        System.out.println("system wystartował");
+        List<Direction> directions = convert(args);
+        run(directions.toArray(new Direction[0]));
+        System.out.println("system zakończył działanie");
 //        lab1 end
     }
 
