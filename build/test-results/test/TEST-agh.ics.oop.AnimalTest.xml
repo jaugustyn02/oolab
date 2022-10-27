@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="agh.ics.oop.AnimalTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-10-23T12:32:20" hostname="LAPTOP-ST6HPR0U" time="0.033">
+<testsuite name="agh.ics.oop.AnimalTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2022-10-27T12:03:25" hostname="fedora" time="0.049">
   <properties/>
-  <testcase name="testIntegration()" classname="agh.ics.oop.AnimalTest" time="0.033"/>
+  <testcase name="testIntegration2()" classname="agh.ics.oop.AnimalTest" time="0.045"/>
+  <testcase name="testIntegration()" classname="agh.ics.oop.AnimalTest" time="0.003"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

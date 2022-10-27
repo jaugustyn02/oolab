@@ -1,16 +1,22 @@
 package agh.ics.oop;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 
 public class AnimalTest {
+    Animal testAnimal;
+    @BeforeEach
+    public void init(){
+        testAnimal = new Animal();
+    }
+
     @Test
     public void testIntegration(){
         String[] stringArgs = new String[6];
         Arrays.fill(stringArgs,"_");
-        Animal testAnimal = new Animal();
 
         Assertions.assertTrue(testAnimal.isAt(new Vector2d(2, 2)));
         Assertions.assertTrue(testAnimal.isFacing(MapDirection.NORTH));
@@ -29,14 +35,16 @@ public class AnimalTest {
 
         Assertions.assertTrue(testAnimal.isAt(new Vector2d(4, 4)));
         Assertions.assertTrue(testAnimal.isFacing(MapDirection.SOUTH));
-
+    }
+    @Test
+    public void testIntegration2(){
         for (MoveDirection move: OptionsParser.parse(new String[]{
                 "right", "forward", "left", "f", "r", "r", "backward", "l", "b"})){
             testAnimal.move(move);
         }
 
-        Assertions.assertTrue(testAnimal.isAt(new Vector2d(4, 2)));
-        Assertions.assertTrue(testAnimal.isFacing(MapDirection.WEST));
+        Assertions.assertTrue(testAnimal.isAt(new Vector2d(2, 4)));
+        Assertions.assertTrue(testAnimal.isFacing(MapDirection.EAST));
 //        System.out.println("\n"+ testAnimal);
     }
 }
