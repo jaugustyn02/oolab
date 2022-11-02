@@ -10,7 +10,7 @@ public class AnimalTest {
     Animal testAnimal;
     @BeforeEach
     public void init(){
-        testAnimal = new Animal();
+        testAnimal = new Animal(new RectangularMap(5,5), new Vector2d(2, 2));
     }
 
     @Test

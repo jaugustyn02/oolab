@@ -20,15 +20,11 @@ public class SimulationEngine implements IEngine{
 
     @Override
     public void run() {
-//        int nr=0;
         ListIterator<Animal> it = this.animals.listIterator(0);
         for (MoveDirection direction: this.directions){
             if(!it.hasNext())
                 it = this.animals.listIterator(0);
             it.next().move(direction);
-//            System.out.println(nr%2 + ": " + direction.toString());
-//            System.out.println(this.map.toString());
-//            nr++;
         }
         System.out.println(this.map.toString());
     }
