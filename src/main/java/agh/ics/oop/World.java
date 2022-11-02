@@ -1,6 +1,6 @@
 package agh.ics.oop;
 
-import java.util.Arrays;
+//import java.util.Arrays;
 //import java.lang.reflect.AnnotatedArrayType;
 //import java.util.List;
 //import java.util.stream.Collectors;
@@ -8,20 +8,28 @@ import java.util.Arrays;
 
 public class World {
     public static void main(String[] args) {
-//        lab3
-        Animal animal1 = new Animal();
-        System.out.println(Arrays.toString(OptionsParser.parse(args)));
-        for (MoveDirection move: OptionsParser.parse(args)){
-            animal1.move(move);
-        }
-        System.out.println(animal1);
+//        lab4
+        MoveDirection[] directions = new OptionsParser().parse(args);
+        IWorldMap map = new RectangularMap(10, 5);
+        Vector2d[] positions = { new Vector2d(2,2), new Vector2d(3,4) };
+        IEngine engine = new SimulationEngine(directions, map, positions);
+        engine.run();
 
-        Animal animal2 = new Animal();
-        System.out.println(Arrays.toString(OptionsParser.parse(args)));
-        for (MoveDirection move: OptionsParser.parse(args)){
-            animal2.move(move);
-        }
-        System.out.println(animal2);
+//        lab4 end
+//        lab3
+//        Animal animal1 = new Animal();
+//        System.out.println(Arrays.toString(OptionsParser.parse(args)));
+//        for (MoveDirection move: OptionsParser.parse(args)){
+//            animal1.move(move);
+//        }
+//        System.out.println(animal1);
+//
+//        Animal animal2 = new Animal();
+//        System.out.println(Arrays.toString(OptionsParser.parse(args)));
+//        for (MoveDirection move: OptionsParser.parse(args)){
+//            animal2.move(move);
+//        }
+//        System.out.println(animal2);
 //        lab3 end
 
 //        lab2
