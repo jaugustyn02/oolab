@@ -1,5 +1,7 @@
 package agh.ics.oop;
 
+import java.util.LinkedList;
+
 /**
  * The interface responsible for interacting with the map of the world.
  * Assumes that Vector2d and MoveDirection classes are defined.
@@ -47,4 +49,6 @@ public interface IWorldMap {
     Object objectAt(Vector2d position);
 
     String toString();
+
+    LinkedList<Animal> getAnimals();
 }
