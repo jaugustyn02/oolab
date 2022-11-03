@@ -30,7 +30,7 @@ public class SimulationEngineTest {
         String[] args = new String[]{"r", "l" ,"b" , "l", "f", "f", "f", "f", "f", "f", "f", "f", "f", "f"};
         MoveDirection[] directions = new OptionsParser().parse(args);
         IWorldMap map = new RectangularMap(6, 6);
-        Vector2d[] positions = { new Vector2d(0,0), new Vector2d(5,5) };
+        Vector2d[] positions = { new Vector2d(0,0), new Vector2d(5,5),new Vector2d(0,0) };
         IEngine engine = new SimulationEngine(directions, map, positions);
         engine.run();
 

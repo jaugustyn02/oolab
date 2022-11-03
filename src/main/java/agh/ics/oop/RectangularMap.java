@@ -20,7 +20,7 @@ public class RectangularMap implements IWorldMap{
 
     @Override
     public boolean place(Animal animal) {
-        if (this.isOccupied(animal.getPosition())) return false;
+        if (!this.canMoveTo(animal.getPosition())) return false;
         this.animals.add(animal);
         return true;
     }

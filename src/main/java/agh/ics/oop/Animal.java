@@ -45,7 +45,6 @@ public class Animal {
         }
     }
 
-    //lab4
     public Vector2d getPosition() {
         return this.position;
     }
