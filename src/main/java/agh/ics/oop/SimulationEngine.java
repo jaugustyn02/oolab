@@ -1,7 +1,6 @@
 package agh.ics.oop;
 
-import java.util.LinkedList;
-import java.util.ListIterator;
+import java.util.List;
 
 public class SimulationEngine implements IEngine{
     private final IWorldMap map;
@@ -17,12 +16,11 @@ public class SimulationEngine implements IEngine{
 
     @Override
     public void run() {
-        LinkedList<Animal> animals = map.getAnimals();
-        ListIterator<Animal> it = animals.listIterator(0);
+        List<Animal> animals = map.getAnimals();
+        int animalInd=0;
         for (MoveDirection direction: this.directions) {
-            if (!it.hasNext())
-                it = animals.listIterator(0);
-            it.next().move(direction);
+            animals.get(animalInd).move(direction);
+            animalInd = (animalInd + 1) % animals.size();
         }
     }
 }

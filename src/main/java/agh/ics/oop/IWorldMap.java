@@ -1,6 +1,6 @@
 package agh.ics.oop;
 
-import java.util.LinkedList;
+import java.util.List;
 
 /**
  * The interface responsible for interacting with the map of the world.
@@ -50,5 +50,6 @@ public interface IWorldMap {
 
     String toString();
 
-    LinkedList<Animal> getAnimals();
+    List<Animal> getAnimals();
+//    Animal getAnimal(int animalIndex);
 }

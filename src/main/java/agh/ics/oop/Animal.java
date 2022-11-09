@@ -39,7 +39,7 @@ public class Animal {
             case FORWARD -> new_position = this.position.add(this.direction.toUnitVector());
             case BACKWARD -> new_position = this.position.subtract(this.direction.toUnitVector());
         }
-        if (new_position != null && map.canMoveTo(new_position) && !map.isOccupied(new_position)){
+        if (new_position != null && map.canMoveTo(new_position)){
             this.position = new_position;
             new_position = null;
         }

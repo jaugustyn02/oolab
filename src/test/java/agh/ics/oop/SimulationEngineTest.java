@@ -2,8 +2,7 @@ package agh.ics.oop;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-
-import java.util.LinkedList;
+import java.util.List;
 
 public class SimulationEngineTest {
     @Test
@@ -15,7 +14,7 @@ public class SimulationEngineTest {
         IEngine engine = new SimulationEngine(directions, map, positions);
         engine.run();
 
-        LinkedList<Animal> animals = map.getAnimals();
+        List<Animal> animals = map.getAnimals();
 
         Assertions.assertTrue(animals.get(0).isAt(new Vector2d(2, 0)));
         Assertions.assertTrue(animals.get(0).isFacing(MapDirection.SOUTH));
@@ -34,7 +33,7 @@ public class SimulationEngineTest {
         IEngine engine = new SimulationEngine(directions, map, positions);
         engine.run();
 
-        LinkedList<Animal> animals = map.getAnimals();
+        List<Animal> animals = map.getAnimals();
 
         Assertions.assertTrue(animals.get(0).isAt(new Vector2d(5, 0)));
         Assertions.assertTrue(animals.get(0).isFacing(MapDirection.EAST));
