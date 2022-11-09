@@ -14,6 +14,6 @@ public class Grass {
         return "*";
     }
     protected void setNewRandomPosition(){
-        this.position = map.randValidGrassPosition();
+        this.position = map.randomValidGrassPosition();
     }
 }

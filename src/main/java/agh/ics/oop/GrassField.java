@@ -8,7 +8,7 @@ import static java.lang.Math.sqrt;
 public class GrassField extends AbstractWorldMap{
     private Vector2d lowerLeft = new Vector2d(0, 0);
     private Vector2d upperRight = new Vector2d(0, 0);
-    private final int grassUpperBound;
+    protected final int grassUpperBound;
     private final List<Grass> grasses;
     private final MapVisualizer mapVisualizer = new MapVisualizer(this);
     private final Random rand = new Random();
@@ -19,7 +19,7 @@ public class GrassField extends AbstractWorldMap{
         this.grassUpperBound = (int) floor(sqrt(numOfGrass * 10));
         this.grasses = new ArrayList<>(10);
         for (int i=0; i<numOfGrass; i++)
-            grasses.add(new Grass(randValidGrassPosition(), this));
+            grasses.add(new Grass(randomValidGrassPosition(), this));
 
         this.showEntireMap = showEntireMap;
     }
@@ -58,11 +58,11 @@ public class GrassField extends AbstractWorldMap{
         return this.mapVisualizer.draw(lowerLeft, this.upperRight);
     }
 
-    protected Vector2d randValidGrassPosition(){
-        Vector2d randGrassPosition;
+    protected Vector2d randomValidGrassPosition(){
+        Vector2d randomGrassPosition;
         do {
-            randGrassPosition = new Vector2d(rand.nextInt(this.grassUpperBound)+1, rand.nextInt(this.grassUpperBound)+1);
-        } while (isOccupied(randGrassPosition));
-        return randGrassPosition;
+            randomGrassPosition = new Vector2d(rand.nextInt(this.grassUpperBound)+1, rand.nextInt(this.grassUpperBound)+1);
+        } while (isOccupied(randomGrassPosition));
+        return randomGrassPosition;
     }
 }
