@@ -13,7 +13,7 @@ public class RectangularMapTest {
     private List<Animal> animals;
 
     @BeforeAll
-    public static void animalInit(){
+    public static void positionsInit(){
         initPosition1 = new Vector2d(0, 0);
         initPosition2 = new Vector2d(4, 4);
         offTheMap = new Vector2d(-1, -1);

@@ -9,19 +9,23 @@ public class GrassField extends AbstractWorldMap{
     private Vector2d lowerLeft = new Vector2d(0, 0);
     private Vector2d upperRight = new Vector2d(0, 0);
     private final int grassUpperBound;
-    private final List<Grass> grasses = new ArrayList<>();
+    private final List<Grass> grasses;
     private final MapVisualizer mapVisualizer = new MapVisualizer(this);
     private final Random rand = new Random();
+    // Additional
+    private final boolean showEntireMap;
+
+    public GrassField(int numOfGrass, boolean showEntireMap){
+        this.grassUpperBound = (int) floor(sqrt(numOfGrass * 10));
+        this.grasses = new ArrayList<>(10);
+        for (int i=0; i<numOfGrass; i++)
+            grasses.add(new Grass(randValidGrassPosition(), this));
+
+        this.showEntireMap = showEntireMap;
+    }
 
     public GrassField(int numOfGrass) {
-        this.grassUpperBound = (int) floor(sqrt(numOfGrass * 10));
-        Vector2d newGrassPosition;
-        for (int i=0; i<numOfGrass; i++) {
-            do {
-                newGrassPosition = this.randGrassPosition();
-            } while (isOccupied(newGrassPosition));
-            grasses.add(new Grass(newGrassPosition));
-        }
+        this(numOfGrass, false);
     }
 
     @Override
@@ -45,10 +49,20 @@ public class GrassField extends AbstractWorldMap{
             this.upperRight = this.upperRight.upperRight(animal.position);
             this.lowerLeft = this.lowerLeft.lowerLeft(animal.position);
         }
+
+        // All Grass objects can be seen on the map
+        if (this.showEntireMap)
+            for (Grass grass: grasses)
+                this.upperRight = this.upperRight.upperRight(grass.getPosition());
+
         return this.mapVisualizer.draw(lowerLeft, this.upperRight);
     }
 
-    private Vector2d randGrassPosition(){
-        return new Vector2d(rand.nextInt(this.grassUpperBound)+1, rand.nextInt(this.grassUpperBound)+1);
+    protected Vector2d randValidGrassPosition(){
+        Vector2d randGrassPosition;
+        do {
+            randGrassPosition = new Vector2d(rand.nextInt(this.grassUpperBound)+1, rand.nextInt(this.grassUpperBound)+1);
+        } while (isOccupied(randGrassPosition));
+        return randGrassPosition;
     }
 }

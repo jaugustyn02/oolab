@@ -40,7 +40,14 @@ public class Animal {
             case BACKWARD -> new_position = this.position.subtract(this.direction.toUnitVector());
         }
         if (new_position != null && map.canMoveTo(new_position)){
-            this.position = new_position;
+            if (map.objectAt(new_position) instanceof Grass grass){
+                System.out.println(map);
+                this.position = new_position;
+                grass.setNewRandomPosition();
+                System.out.println("Trawa została zjedzona: "+new_position+" -> "+grass.getPosition()+"\n");
+                System.out.println(map);
+            }
+            else this.position = new_position;
             new_position = null;
         }
     }
