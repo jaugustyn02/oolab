@@ -19,7 +19,6 @@ public class GrassField extends AbstractWorldMap{
             grasses.add(new Grass(randomValidGrassPosition(), this));
     }
 
-
     @Override
     public boolean canMoveTo(Vector2d position) {
         Object object = this.objectAt(position);
@@ -37,7 +36,7 @@ public class GrassField extends AbstractWorldMap{
 
     @Override
     protected Vector2d lowerLeft(){
-        for (Animal animal: super.animals) {
+        for (Animal animal: super.animals.values()) {
             this.lowerLeft = this.lowerLeft.lowerLeft(animal.position);
         }
         return lowerLeft;
@@ -45,7 +44,7 @@ public class GrassField extends AbstractWorldMap{
 
     @Override
     protected Vector2d upperRight(){
-        for (Animal animal: super.animals) {
+        for (Animal animal: super.animals.values()) {
             this.upperRight = this.upperRight.upperRight(animal.position);
         }
         for (Grass grass: grasses)
