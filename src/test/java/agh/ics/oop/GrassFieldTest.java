@@ -93,29 +93,6 @@ public class GrassFieldTest {
         if (map.objectAt(validPosition3) == null)
             Assertions.assertFalse(map.isOccupied(validPosition3));
     }
-    @Test
-    public void toStringTest(){
-        String emptyMapString = """
-                 y\\x  0
-                  1: ---
-                  0: | |
-                 -1: ---
-                """;
-        String filledMapString = """
-                 y\\x  0 1 2 3 4
-                  5: -----------
-                  4: | | | | |N|
-                  3: | | | | | |
-                  2: | | | | | |
-                  1: | | | | | |
-                  0: |N| | | | |
-                 -1: -----------
-                """;
-        Assertions.assertEquals(emptyMapString, map.toString());
-        map.place(animal1);
-        map.place(animal2);
-        Assertions.assertEquals(filledMapString, map.toString().replace('*', ' '));
-    }
 
     @Test void integrationTest(){
         // place

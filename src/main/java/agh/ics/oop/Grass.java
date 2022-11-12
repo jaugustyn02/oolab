@@ -13,6 +13,7 @@ public class Grass {
     public String toString(){
         return "*";
     }
+
     protected void setNewRandomPosition(){
         this.position = map.randomValidGrassPosition();
     }

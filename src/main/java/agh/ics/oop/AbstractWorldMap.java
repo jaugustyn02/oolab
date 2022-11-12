@@ -5,11 +5,18 @@ import java.util.List;
 
 public abstract class AbstractWorldMap implements IWorldMap{
     protected List<Animal> animals = new ArrayList<>();
+    protected final MapVisualizer mapVisualizer = new MapVisualizer(this);
 
     @Override
     abstract public boolean canMoveTo(Vector2d position);
+
     @Override
-    abstract public String toString();
+    public String toString(){
+        return mapVisualizer.draw(this.lowerLeft(), this.upperRight());
+    }
+
+    abstract protected Vector2d lowerLeft();
+    abstract protected Vector2d upperRight();
 
     @Override
     public boolean place(Animal animal) {

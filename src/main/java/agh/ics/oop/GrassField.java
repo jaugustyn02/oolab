@@ -10,23 +10,15 @@ public class GrassField extends AbstractWorldMap{
     private Vector2d upperRight = new Vector2d(0, 0);
     protected final int grassUpperBound;
     private final List<Grass> grasses;
-    private final MapVisualizer mapVisualizer = new MapVisualizer(this);
     private final Random rand = new Random();
-    // Additional
-    private final boolean showEntireMap;
 
-    public GrassField(int numOfGrass, boolean showEntireMap){
+    public GrassField(int numOfGrass){
         this.grassUpperBound = (int) floor(sqrt(numOfGrass * 10));
         this.grasses = new ArrayList<>(10);
         for (int i=0; i<numOfGrass; i++)
             grasses.add(new Grass(randomValidGrassPosition(), this));
-
-        this.showEntireMap = showEntireMap;
     }
 
-    public GrassField(int numOfGrass) {
-        this(numOfGrass, false);
-    }
 
     @Override
     public boolean canMoveTo(Vector2d position) {
@@ -44,18 +36,21 @@ public class GrassField extends AbstractWorldMap{
     }
 
     @Override
-    public String toString(){
+    protected Vector2d lowerLeft(){
         for (Animal animal: super.animals) {
-            this.upperRight = this.upperRight.upperRight(animal.position);
             this.lowerLeft = this.lowerLeft.lowerLeft(animal.position);
         }
+        return lowerLeft;
+    }
 
-        // All Grass objects can be seen on the map
-        if (this.showEntireMap)
-            for (Grass grass: grasses)
+    @Override
+    protected Vector2d upperRight(){
+        for (Animal animal: super.animals) {
+            this.upperRight = this.upperRight.upperRight(animal.position);
+        }
+        for (Grass grass: grasses)
                 this.upperRight = this.upperRight.upperRight(grass.getPosition());
-
-        return this.mapVisualizer.draw(lowerLeft, this.upperRight);
+        return upperRight;
     }
 
     protected Vector2d randomValidGrassPosition(){
