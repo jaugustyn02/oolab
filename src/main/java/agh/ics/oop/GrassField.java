@@ -37,7 +37,7 @@ public class GrassField extends AbstractWorldMap{
     @Override
     protected Vector2d lowerLeft(){
         for (Animal animal: super.animals.values()) {
-            this.lowerLeft = this.lowerLeft.lowerLeft(animal.position);
+            this.lowerLeft = this.lowerLeft.lowerLeft(animal.getPosition());
         }
         return lowerLeft;
     }

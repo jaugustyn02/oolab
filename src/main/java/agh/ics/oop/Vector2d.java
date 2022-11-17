@@ -46,4 +46,8 @@ public class Vector2d {
     public int hashCode() {
         return Objects.hash(x, y);
     }
+
+    public Vector2d copy(){
+        return new Vector2d(this.x, this.y);
+    }
 }

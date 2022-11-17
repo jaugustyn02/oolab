@@ -44,12 +44,17 @@ public class Animal {
             case BACKWARD -> new_position = this.position.subtract(this.direction.toUnitVector());
         }
         if (new_position != null && map.canMoveTo(new_position)){
-            positionChanged(new_position);
+            Vector2d oldPosition = position.copy();
             if (map.objectAt(new_position) instanceof Grass grass){
                 this.position = new_position;
+                positionChanged(oldPosition);
                 grass.setNewRandomPosition();
+                System.out.println("Trawa wędruje z "+this.position.toString()+" do "+grass.getPosition());
             }
-            else this.position = new_position;
+            else{
+                this.position = new_position;
+                positionChanged(oldPosition);
+            }
             new_position = null;
         }
     }
@@ -66,8 +71,8 @@ public class Animal {
         observers.remove(observer);
     }
 
-    private void positionChanged(Vector2d newPosition){
+    private void positionChanged(Vector2d oldPosition){
         for(IPositionChangeObserver observer: observers)
-            observer.positionChanged(position, newPosition);
+            observer.positionChanged(oldPosition, position);
     }
 }
