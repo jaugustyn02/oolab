@@ -63,12 +63,12 @@ public class MapBoundary implements IPositionChangeObserver{
         this.objectsOY.remove(indices.getYI());
     }
 
-    protected Vector2d lowerLeft(){
+    public Vector2d lowerLeft(){
         if(this.objectsOX.isEmpty()) return new Vector2d(0, 0);
         return new Vector2d(this.objectsOX.getLast().getPosition().x, this.objectsOY.getLast().getPosition().y);
     }
 
-    protected Vector2d upperRight(){
+    public Vector2d upperRight(){
         if(this.objectsOX.isEmpty()) return new Vector2d(0, 0);
         return new Vector2d(this.objectsOX.get(0).getPosition().x, this.objectsOY.get(0).getPosition().y);
     }

@@ -6,24 +6,32 @@ package agh.ics.oop;
 //import java.util.stream.Collectors;
 
 
+import agh.ics.oop.gui.App;
+import javafx.application.Application;
+
 public class World {
     public static void main(String[] args) {
+
+
 //        lab7
-        try {
-            String[] strArgs1 = new String[]{"f", "b" ,"siema", "backward", "left", "right"};
-            String[] strArgs2 = new String[]{"f", "b", "backward", "left", "b", "left", "b"};
-            MoveDirection[] directions = new OptionsParser().parse(strArgs2);
-            IWorldMap map = new GrassField(5);
-            Vector2d[] positions1 = {new Vector2d(2, 2), new Vector2d(3, 4), new Vector2d(2, 2)};
-            Vector2d[] positions2 = {new Vector2d(2, 2), new Vector2d(3, 4)};
-            IEngine engine = new SimulationEngine(directions, map, positions2);
-            System.out.println(map);
-            engine.run();
-            System.out.println(map);
-        } catch (IllegalArgumentException e){
-//            System.out.println(e);
-            e.printStackTrace();
-        }
+
+        Application.launch(App.class, args);
+
+//        try {
+//            String[] strArgs1 = new String[]{"f", "b" ,"siema", "backward", "left", "right"};
+//            String[] strArgs2 = new String[]{"f", "b", "backward", "left", "b", "left", "b"};
+//            MoveDirection[] directions = new OptionsParser().parse(strArgs2);
+//            IWorldMap map = new GrassField(5);
+//            Vector2d[] positions1 = {new Vector2d(2, 2), new Vector2d(3, 4), new Vector2d(2, 2)};
+//            Vector2d[] positions2 = {new Vector2d(2, 2), new Vector2d(3, 4)};
+//            IEngine engine = new SimulationEngine(directions, map, positions2);
+//            System.out.println(map);
+//            engine.run();
+//            System.out.println(map);
+//        } catch (IllegalArgumentException e){
+////            System.out.println(e);
+//            e.printStackTrace();
+//        }
 //        lab7 end
 //        lab5
 //        MoveDirection[] directions = new OptionsParser().parse(args);

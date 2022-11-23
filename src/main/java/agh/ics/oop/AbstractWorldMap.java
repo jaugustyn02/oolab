@@ -17,8 +17,8 @@ public abstract class AbstractWorldMap implements IWorldMap, IPositionChangeObse
         return mapVisualizer.draw(this.lowerLeft(), this.upperRight());
     }
 
-    abstract protected Vector2d lowerLeft();
-    abstract protected Vector2d upperRight();
+    abstract public Vector2d lowerLeft();
+    abstract public Vector2d upperRight();
 
     @Override
     public void place(Animal animal) throws IllegalArgumentException{

@@ -12,17 +12,22 @@ public class GrassField extends AbstractWorldMap{
     private final List<Grass> grasses;
     private final Random rand = new Random();
 
-    private final MapBoundary mapBoundary = new MapBoundary();
+    private final MapBoundary mapBoundary;
 
-    public GrassField(int numOfGrass){
+    public GrassField(int numOfGrass, MapBoundary mapBoundary){
         this.grassUpperBound = (int) floor(sqrt(numOfGrass * 10));
         this.grasses = new ArrayList<>(10);
+        this.mapBoundary = mapBoundary;
         Vector2d randPosition;
         for (int i=0; i<numOfGrass; i++) {
             randPosition = randomValidGrassPosition();
             grasses.add(new Grass(randPosition, this));
             mapBoundary.addObject(randPosition, ObjectType.Grass);
         }
+    }
+
+    public GrassField(int numOfGrass){
+        this(numOfGrass, new MapBoundary());
     }
 
     @Override
@@ -41,7 +46,7 @@ public class GrassField extends AbstractWorldMap{
     }
 
     @Override
-    protected Vector2d lowerLeft(){
+    public Vector2d lowerLeft(){
 //        for (Animal animal: super.animals.values()) {
 //            this.lowerLeft = this.lowerLeft.lowerLeft(animal.getPosition());
 //        }
@@ -51,7 +56,7 @@ public class GrassField extends AbstractWorldMap{
     }
 
     @Override
-    protected Vector2d upperRight(){
+    public Vector2d upperRight(){
 //        for (Animal animal: super.animals.values()) {
 //            this.upperRight = this.upperRight.upperRight(animal.position);
 //        }

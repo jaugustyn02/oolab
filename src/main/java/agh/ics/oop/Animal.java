@@ -45,16 +45,16 @@ public class Animal {
         }
         if (new_position != null && map.canMoveTo(new_position)){
             Vector2d oldPosition = position.copy();
-            if (map.objectAt(new_position) instanceof Grass grass){
-                this.position = new_position;
-                positionChanged(oldPosition);
-                grass.setNewRandomPosition();
-                System.out.println("Trawa wędruje z "+this.position.toString()+" do "+grass.getPosition());
-            }
-            else{
-                this.position = new_position;
-                positionChanged(oldPosition);
-            }
+//            if (map.objectAt(new_position) instanceof Grass grass){
+//                this.position = new_position;
+//                positionChanged(oldPosition);
+//                grass.setNewRandomPosition();
+//                System.out.println("Trawa wędruje z "+this.position.toString()+" do "+grass.getPosition());
+//            }
+//            else{
+            this.position = new_position;
+            positionChanged(oldPosition);
+//            }
             new_position = null;
         }
     }

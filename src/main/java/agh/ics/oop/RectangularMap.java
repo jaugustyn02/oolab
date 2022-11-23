@@ -15,12 +15,12 @@ public class RectangularMap extends AbstractWorldMap{
     }
 
     @Override
-    protected Vector2d lowerLeft(){
+    public Vector2d lowerLeft(){
         return lowerLeft;
     }
 
     @Override
-    protected Vector2d upperRight(){
+    public Vector2d upperRight(){
         return upperRight;
     }
 }
