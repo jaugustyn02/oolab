@@ -14,10 +14,6 @@ public enum MapDirection {
             case SOUTH -> "S";
             case WEST -> "W";
             case EAST -> "E";
-//            case NORTH -> "Północ";
-//            case SOUTH -> "Południe";
-//            case WEST -> "Zachód";
-//            case EAST -> "Wschód";
         };
     }
 

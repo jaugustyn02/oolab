@@ -42,10 +42,15 @@ public class GrassFieldTest {
         Animal animalTest1 = new Animal(map, initPosition1);
         Animal animalTest2 = new Animal(map, validPosition3);
 
-        Assertions.assertTrue(map.place(animal1));
-        Assertions.assertTrue(map.place(animal2));
-        Assertions.assertFalse(map.place(animalTest1));
-        Assertions.assertTrue(map.place(animalTest2));
+        map.place(animal1);
+        map.place(animal2);
+        map.place(animalTest2);
+
+        Exception exception1 = Assertions.assertThrows(IllegalArgumentException.class, () -> map.place(animalTest1));
+        String expectedMessage1 = initPosition1+" - is not legal position to place animal on";
+        String actualMessage1 = exception1.getMessage();
+        Assertions.assertEquals(expectedMessage1, actualMessage1);
+//        map.place(animalTest1); FALSE
 
         animals = map.getAnimals();
         Assertions.assertSame(animal1, animals.get(0));
@@ -96,8 +101,8 @@ public class GrassFieldTest {
 
     @Test void integrationTest(){
         // place
-        Assertions.assertTrue(map.place(animal1));
-        Assertions.assertTrue(map.place(animal2));
+        map.place(animal1);
+        map.place(animal2);
 
         // isOccupied
         Assertions.assertTrue(map.isOccupied(initPosition1));

@@ -21,11 +21,11 @@ public abstract class AbstractWorldMap implements IWorldMap, IPositionChangeObse
     abstract protected Vector2d upperRight();
 
     @Override
-    public boolean place(Animal animal) {
-        if (!this.canMoveTo(animal.getPosition())) return false;
+    public void place(Animal animal) throws IllegalArgumentException{
+        if (!this.canMoveTo(animal.getPosition()))
+            throw new IllegalArgumentException(animal.getPosition()+" - is not legal position to place animal on");
         this.animals.put(animal.getPosition(), animal);
         animal.addObserver(this);
-        return true;
     }
 
     @Override

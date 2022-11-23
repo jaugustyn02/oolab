@@ -18,6 +18,7 @@ public class Vector2d {
     public boolean follows(Vector2d other){
         return this.x >= other.x && this.y >= other.y;
     }
+
     public Vector2d add(Vector2d other){
         return new Vector2d(this.x + other.x, this.y + other.y);
     }
@@ -49,5 +50,9 @@ public class Vector2d {
 
     public Vector2d copy(){
         return new Vector2d(this.x, this.y);
+    }
+
+    public int getByIndex(int i){
+        return (i == 0 ? this.x : this.y);
     }
 }

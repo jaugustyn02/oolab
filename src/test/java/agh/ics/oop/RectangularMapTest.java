@@ -6,6 +6,9 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 public class RectangularMapTest {
     private IWorldMap map;
     private static Animal animal1, animal2;
@@ -42,10 +45,19 @@ public class RectangularMapTest {
         Animal animalTest1 = new Animal(map, initPosition1);
         Animal animalTest2 = new Animal(map, offTheMap);
 
-        Assertions.assertTrue(map.place(animal1));
-        Assertions.assertTrue(map.place(animal2));
-        Assertions.assertFalse(map.place(animalTest1));
-        Assertions.assertFalse(map.place(animalTest2));
+        map.place(animal1);
+        map.place(animal2);
+
+        Exception exception1 = Assertions.assertThrows(IllegalArgumentException.class, () -> map.place(animalTest1));
+        Exception exception2 = Assertions.assertThrows(IllegalArgumentException.class, () -> map.place(animalTest2));
+        String expectedMessage1 = initPosition1+" - is not legal position to place animal on";
+        String expectedMessage2 = offTheMap+" - is not legal position to place animal on";
+        String actualMessage1 = exception1.getMessage();
+        String actualMessage2 = exception2.getMessage();
+        Assertions.assertEquals(expectedMessage1, actualMessage1);
+        Assertions.assertEquals(expectedMessage2, actualMessage2);
+//        map.place(animalTest1); FALSE
+//        map.place(animalTest2); FALSE
 
         animals = map.getAnimals();
         Assertions.assertSame(animal1, animals.get(0));
@@ -56,21 +68,21 @@ public class RectangularMapTest {
         map.place(animal1);
         map.place(animal2);
 
-        Assertions.assertFalse(map.canMoveTo(initPosition1));
-        Assertions.assertFalse(map.canMoveTo(initPosition2));
-        Assertions.assertFalse(map.canMoveTo(offTheMap));
-        Assertions.assertTrue(map.canMoveTo(validPosition1));
-        Assertions.assertTrue(map.canMoveTo(validPosition2));
+        assertFalse(map.canMoveTo(initPosition1));
+        assertFalse(map.canMoveTo(initPosition2));
+        assertFalse(map.canMoveTo(offTheMap));
+        assertTrue(map.canMoveTo(validPosition1));
+        assertTrue(map.canMoveTo(validPosition2));
     }
     @Test
     public void isOccupiedTest(){
         map.place(animal1);
         map.place(animal2);
 
-        Assertions.assertTrue(map.isOccupied(initPosition1));
-        Assertions.assertTrue(map.isOccupied(initPosition1));
-        Assertions.assertFalse(map.isOccupied(validPosition1));
-        Assertions.assertFalse(map.isOccupied(validPosition2));
+        assertTrue(map.isOccupied(initPosition1));
+        assertTrue(map.isOccupied(initPosition1));
+        assertFalse(map.isOccupied(validPosition1));
+        assertFalse(map.isOccupied(validPosition2));
     }
     @Test
     public void objectAtTest(){
@@ -80,8 +92,8 @@ public class RectangularMapTest {
         map.place(animal2);
         Assertions.assertNotNull(map.objectAt(initPosition1));
         Assertions.assertNotNull(map.objectAt(initPosition2));
-        Assertions.assertTrue(map.objectAt(initPosition1) instanceof Animal);
-        Assertions.assertTrue(map.objectAt(initPosition2) instanceof Animal);
+        assertTrue(map.objectAt(initPosition1) instanceof Animal);
+        assertTrue(map.objectAt(initPosition2) instanceof Animal);
         Assertions.assertSame(animal1, map.objectAt(initPosition1));
         Assertions.assertSame(animal2, map.objectAt(initPosition2));
     }
@@ -115,12 +127,12 @@ public class RectangularMapTest {
 
     @Test void integrationTest(){
         // place
-        Assertions.assertTrue(map.place(animal1));
-        Assertions.assertTrue(map.place(animal2));
+        map.place(animal1);
+        map.place(animal2);
 
         // isOccupied
-        Assertions.assertTrue(map.isOccupied(initPosition1));
-        Assertions.assertTrue(map.isOccupied(initPosition2));
+        assertTrue(map.isOccupied(initPosition1));
+        assertTrue(map.isOccupied(initPosition2));
 
         // getAnimals
         animals = map.getAnimals();
@@ -132,17 +144,17 @@ public class RectangularMapTest {
         // objectAt
         Assertions.assertNotNull(map.objectAt(initPosition1));
         Assertions.assertNotNull(map.objectAt(initPosition2));
-        Assertions.assertTrue(map.objectAt(initPosition1) instanceof Animal);
-        Assertions.assertTrue(map.objectAt(initPosition2) instanceof Animal);
+        assertTrue(map.objectAt(initPosition1) instanceof Animal);
+        assertTrue(map.objectAt(initPosition2) instanceof Animal);
         Assertions.assertSame(animal1, map.objectAt(initPosition1));
         Assertions.assertSame(animal2, map.objectAt(initPosition2));
 
         // canMoveTo
-        Assertions.assertFalse(map.canMoveTo(initPosition1));
-        Assertions.assertFalse(map.canMoveTo(initPosition2));
-        Assertions.assertFalse(map.canMoveTo(offTheMap));
-        Assertions.assertTrue(map.canMoveTo(validPosition1));
-        Assertions.assertTrue(map.canMoveTo(validPosition2));
+        assertFalse(map.canMoveTo(initPosition1));
+        assertFalse(map.canMoveTo(initPosition2));
+        assertFalse(map.canMoveTo(offTheMap));
+        assertTrue(map.canMoveTo(validPosition1));
+        assertTrue(map.canMoveTo(validPosition2));
 
         // toString
         System.out.println(map);
