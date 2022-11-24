@@ -25,49 +25,43 @@ public class MapRenderer {
     }
 
     public void render(){
+        System.out.println(lowerLeft+", "+upperRight);
 
-        System.out.println(,upperRight);
-        for (int i = upperRight.y + 1; i >= lowerLeft.y; i--) {
+        rootPane.getColumnConstraints().add(new ColumnConstraints(FIELD_GROW));
+        Label label = new Label("y/x");
+        rootPane.add(label, 0,0);
+        GridPane.setHalignment(label, HPos.CENTER);
+        GridPane.setValignment(label, VPos.CENTER);
+        renderHeader();
 
-            if (i == upperRight.y + 1) {
-                rootPane.getColumnConstraints().add(new ColumnConstraints(FIELD_GROW));
-                Label label = new Label("y/x");
-                rootPane.add(label, 0,0);
-                renderHeader();
-
-            } else {
-                Label label = new Label(String.valueOf(upperRight.y-i));
-                rootPane.add(label, lowerLeft.y,i+1);
-
-                GridPane.setHalignment(label, HPos.CENTER);
-                GridPane.setValignment(label, VPos.CENTER);
-                renderRow( i);
-            }
-        }
-    }
-
-    public void renderHeader(){
-        rootPane.getRowConstraints().add(new RowConstraints(FIELD_GROW));
-        for (int j = lowerLeft.x; j < upperRight.x + 1; j++) {
-            rootPane.getColumnConstraints().add(new ColumnConstraints(FIELD_GROW));
-            Label label = new Label(String.valueOf(j));
-            GridPane.setHalignment(label, HPos.CENTER);
-            rootPane.add(label, j+1, 0);
-        }
-    }
-    public void renderRow( int i){
-        rootPane.getRowConstraints().add(new RowConstraints(FIELD_GROW));
-        for (int j = lowerLeft.x ; j < upperRight.x + 1; j++) {
-            Object object = this.map.objectAt(new Vector2d(j, i));
-            String txt = " ";
-            if (object != null) {
-                txt = object.toString();
-            }
-            Label label = new Label(txt);
-
+        for (int row = upperRight.y; row >= lowerLeft.y; row--) {
+            label = new Label(String.valueOf(upperRight.y-row+lowerLeft.y));
+            rootPane.add(label, 0,row-lowerLeft.y+1);
             GridPane.setHalignment(label, HPos.CENTER);
             GridPane.setValignment(label, VPos.CENTER);
-            rootPane.add(label, j+1, upperRight.y-i+1);
+            renderRow(row);
+        }
+    }
+
+    private void renderHeader(){
+        rootPane.getRowConstraints().add(new RowConstraints(FIELD_GROW));
+        for (int col = lowerLeft.x; col <= upperRight.x; col++) {
+            rootPane.getColumnConstraints().add(new ColumnConstraints(FIELD_GROW));
+            Label label = new Label(String.valueOf(col));
+            GridPane.setHalignment(label, HPos.CENTER);
+            rootPane.add(label, col-lowerLeft.x+1, 0);
+        }
+    }
+
+    private void renderRow(int row){
+        rootPane.getRowConstraints().add(new RowConstraints(FIELD_GROW));
+        for (int col = lowerLeft.x; col <= upperRight.x; col++){
+            Object object = this.map.objectAt(new Vector2d(col, row));
+//            String txt = (object == null ? " " : object.toString());
+            Label label = new Label(object == null ? " " : object.toString());
+            GridPane.setHalignment(label, HPos.CENTER);
+            GridPane.setValignment(label, VPos.CENTER);
+            rootPane.add(label, col-lowerLeft.x+1, upperRight.y-row+1);
         }
     }
 }

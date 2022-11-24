@@ -7,3 +7,4 @@ Zadania z labolatoriów z przedmiotu **Programowanie Obiektowe** w języku _Java
 - Lab 4
 - Lab 5
 - Lab 6
+- Lab 7

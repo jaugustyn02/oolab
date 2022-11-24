@@ -11,8 +11,6 @@ import javafx.application.Application;
 
 public class World {
     public static void main(String[] args) {
-
-
 //        lab7
 
         Application.launch(App.class, args);
