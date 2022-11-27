@@ -6,12 +6,9 @@ import static java.lang.Math.floor;
 import static java.lang.Math.sqrt;
 
 public class GrassField extends AbstractWorldMap{
-//    private Vector2d lowerLeft = new Vector2d(0, 0);
-//    private Vector2d upperRight = new Vector2d(0, 0);
     protected final int grassUpperBound;
     private final List<Grass> grasses;
     private final Random rand = new Random();
-
     private final MapBoundary mapBoundary;
 
     public GrassField(int numOfGrass, MapBoundary mapBoundary){
@@ -47,23 +44,11 @@ public class GrassField extends AbstractWorldMap{
 
     @Override
     public Vector2d lowerLeft(){
-//        for (Animal animal: super.animals.values()) {
-//            this.lowerLeft = this.lowerLeft.lowerLeft(animal.getPosition());
-//        }
-//        System.out.println(mapBoundary.lowerLeft());
-//        return lowerLeft;
         return mapBoundary.lowerLeft();
     }
 
     @Override
     public Vector2d upperRight(){
-//        for (Animal animal: super.animals.values()) {
-//            this.upperRight = this.upperRight.upperRight(animal.position);
-//        }
-//        for (Grass grass: grasses)
-//                this.upperRight = this.upperRight.upperRight(grass.getPosition());
-//        System.out.println(mapBoundary.upperRight());
-//        return upperRight;
         return mapBoundary.upperRight();
     }
 

@@ -2,14 +2,24 @@ package agh.ics.oop;
 
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
-public class Animal {
+public class Animal extends AbstractMapElement{
     protected Vector2d position;
     private MapDirection direction = MapDirection.NORTH;
-    private Vector2d new_position = null;
+//    private Vector2d new_position = null;
+//    private MoveDirection new_
     private final IWorldMap map;
     private final List<IPositionChangeObserver> observers = new ArrayList<>();
+
+    private final static Map<MapDirection, String> directionFilename = new HashMap<>(){{
+        put(MapDirection.NORTH, "up.png");
+        put(MapDirection.SOUTH, "down.png");
+        put(MapDirection.EAST, "right.png");
+        put(MapDirection.WEST, "left.png");
+    }};
 
     public Animal(IWorldMap map, Vector2d initialPosition){
         this.map = map;
@@ -37,25 +47,30 @@ public class Animal {
     }
 
     public void move(MoveDirection direction) {
+        Vector2d newPosition = null;
+        MapDirection newDirection = null;
         switch (direction) {
-            case RIGHT -> this.direction = this.direction.next();
-            case LEFT -> this.direction = this.direction.previous();
-            case FORWARD -> new_position = this.position.add(this.direction.toUnitVector());
-            case BACKWARD -> new_position = this.position.subtract(this.direction.toUnitVector());
+            case RIGHT -> newDirection = this.direction.next();
+            case LEFT -> newDirection = this.direction.previous();
+            case FORWARD -> newPosition = this.position.add(this.direction.toUnitVector());
+            case BACKWARD -> newPosition = this.position.subtract(this.direction.toUnitVector());
         }
-        if (new_position != null && map.canMoveTo(new_position)){
+        if(newDirection != null){
+            this.direction = newDirection;
+            positionChanged(position);
+        }
+        else if (newPosition != null && map.canMoveTo(newPosition)){
             Vector2d oldPosition = position.copy();
-//            if (map.objectAt(new_position) instanceof Grass grass){
-//                this.position = new_position;
+//            if (map.objectAt(newPosition) instanceof Grass grass){
+//                this.position = newPosition;
 //                positionChanged(oldPosition);
 //                grass.setNewRandomPosition();
 //                System.out.println("Trawa wędruje z "+this.position.toString()+" do "+grass.getPosition());
 //            }
 //            else{
-            this.position = new_position;
+            this.position = newPosition;
             positionChanged(oldPosition);
 //            }
-            new_position = null;
         }
     }
 
@@ -74,5 +89,15 @@ public class Animal {
     private void positionChanged(Vector2d oldPosition){
         for(IPositionChangeObserver observer: observers)
             observer.positionChanged(oldPosition, position);
+    }
+
+    @Override
+    public String getImagePath() {
+        return resourcesPath + directionFilename.get(this.direction);
+    }
+
+    @Override
+    public String getLabelName(){
+        return "Z " + this.position;
     }
 }

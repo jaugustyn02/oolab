@@ -51,5 +51,8 @@ public interface IWorldMap {
     String toString();
 
     List<Animal> getAnimals();
+
+    Vector2d lowerLeft();
+    Vector2d upperRight();
 //    Animal getAnimal(int animalIndex);
 }

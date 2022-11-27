@@ -1,20 +1,19 @@
 package agh.ics.oop;
 
-public class GrassFieldObject implements IMapElement{
+
+public class GrassFieldObject{
     private Vector2d position;
     private final ObjectType objectType;
 
-    public GrassFieldObject(Vector2d position, ObjectType objectType){
+    public GrassFieldObject(Vector2d position, ObjectType type){
         this.position = position;
-        this.objectType = objectType;
+        this.objectType = type;
     }
 
-    @Override
     public Vector2d getPosition() {
         return this.position.copy();
     }
 
-    @Override
     public ObjectType getObjectType(){
         return this.objectType.getValue();
     }
@@ -25,7 +24,6 @@ public class GrassFieldObject implements IMapElement{
         return oldPosition;
     }
 
-    @Override
     public int compareTo(GrassFieldObject otherObject, Axis ax){
         Vector2d pos1 = this.position.copy();
         Vector2d pos2 = otherObject.position.copy();
@@ -41,4 +39,5 @@ public class GrassFieldObject implements IMapElement{
     public String toString(){
         return this.position.toString() + " - " + objectType.toString();
     }
+
 }

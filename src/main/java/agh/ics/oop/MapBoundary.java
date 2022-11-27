@@ -26,7 +26,6 @@ public class MapBoundary implements IPositionChangeObserver{
     public void positionChanged(Vector2d oldPosition, Vector2d newPosition) {
         removeObject(oldPosition, ObjectType.Animal);
         addObject(newPosition, ObjectType.Animal);
-//        printAll();
     }
 
     private IndicesPair getObjectIndices(GrassFieldObject objectToFind){
