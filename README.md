@@ -1,5 +1,7 @@
 # Jan Augustyn - `oolab`
-Zadania z labolatoriów z przedmiotu **Programowanie Obiektowe** w języku _Java_.
+Wieloetapowy projekt stworzony i rozbudowywany na labolatoriach z przedmiotu **Programowanie Obiektowe** w języku _Java_.
+
+Instrukcje do poszczególnych labolatoriów znajdują się w repozytorium [obiektowe-lab](https://github.com/apohllo/obiektowe-lab).
 ### Zaimplementowane labolatoria
 - Lab 1
 - Lab 2
